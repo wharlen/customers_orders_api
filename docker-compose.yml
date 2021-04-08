@@ -29,7 +29,7 @@ services:
       MYSQL_ROOT_PASSWORD: root
     volumes:
       - ./docker/storage/dbdata:/var/lib/mysql
-      - ./docker/storage/mysql-dump:/docker-entrypoint-initdb.d
+      - ./docker/storage/mysql-dump/initdb.sql:/docker-entrypoint-initdb.d/initdb.sql
     networks:
       - network
   phpmyadmin:

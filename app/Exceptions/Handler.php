@@ -34,8 +34,19 @@ class Handler extends ExceptionHandler
      */
     public function register()
     {
-        $this->reportable(function (Throwable $e) {
-            //
+        $this->renderable(function(\Exception $e, $request) {
+            return $this->handleException($request, $e);
         });
+    }
+
+    public function handleException($request, $exception)
+    {
+        if($exception instanceof \Illuminate\Validation\ValidationException) {
+            return response([
+                'message'=>'Dados inválidos',
+                'errors'=>$exception->errors()
+            ], 404);
+        }
+        return response(['message'=> $exception->getMessage()]);
     }
 }
