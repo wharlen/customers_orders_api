@@ -11,5 +11,18 @@ class Order extends Model
 
     protected $table = 'orders';
 
-    protected $fillable = ['','','','',''];
+    protected $fillable = [
+        "orderNumber",
+        "orderDate",
+        "requiredDate",
+        "shippedDate",
+        "status",
+        "comments",
+        "customerNumber",
+        "orderNumber"
+    ];
+
+    public function details(){
+        return $this->hasOne(OrderDetails::class, 'orderNumber', 'orderNumber');
+    }
 }

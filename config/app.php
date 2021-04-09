@@ -175,6 +175,9 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 
+        //Initiating Customer Orders project interface
+        \App\Repositories\RepositoryServiceProvider::class
+
     ],
 
     /*

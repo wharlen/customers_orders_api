@@ -10,5 +10,16 @@ class Office extends Model
     use HasFactory;
     protected $table = 'offices';
 
-    protected $fillable = ['','','','',''];
+    protected $fillable = [
+        "officeCode",
+        "city",
+        "phone",
+        "addressLine1",
+        "addressLine2",
+        "state",
+        "country",
+        "postalCode",
+        "territory",
+        "officeCode"
+    ];
 }

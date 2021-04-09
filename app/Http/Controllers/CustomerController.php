@@ -3,62 +3,50 @@
 namespace App\Http\Controllers;
 
 use App\Models\Customer;
+use App\Repositories\CustomersRepository;
+use GuzzleHttp\Client;
+use GuzzleHttp\Exception\GuzzleException;
 use Illuminate\Http\Request;
 
 class CustomerController extends Controller
 {
     /**
+     * @var CustomersRepository
+     */
+    private $customerRepository;
+
+    public function __construct(CustomersRepository $customers)
+    {
+        $this->customerRepository = $customers;
+    }
+
+    /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        //
+        try {
+            if ($request->has('group_by')) {
+                if ($request->get('group_by') === 'country') {
+                    return response($this->customerRepository->allCustomersByCountry());
+                }
+            }
+            return response(Customer::all());
+        }catch (\Exception $e){
+            return response(['message'=>$e->getMessage()]);
+        }
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Customer  $customerController
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Customer $customerController)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Customer  $customerController
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, Customer $customerController)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Customer  $customerController
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Customer $customerController)
-    {
-        //
+    public function show(Request $request){
+        $this->validate($request,['customer_number'=>'required|exists:customers,customerNumber']);
+        try{
+            return response(
+                $this->customerRepository
+                    ->customerByNumberWithout($request->customer_number, ['creditLimit']));
+        }catch (\Exception $e){
+            return response(['message'=>$e->getMessage()]);
+        }
     }
 }

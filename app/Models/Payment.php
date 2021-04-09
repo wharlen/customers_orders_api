@@ -11,5 +11,10 @@ class Payment extends Model
 
     protected $table = 'payment';
 
-    protected $fillable = ['','','','',''];
+    protected $fillable = [
+        "customerNumber",
+        "checkNumber",
+        "paymentDate",
+        "amount"
+    ];
 }

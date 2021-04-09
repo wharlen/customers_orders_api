@@ -43,7 +43,7 @@ class Handler extends ExceptionHandler
     {
         if($exception instanceof \Illuminate\Validation\ValidationException) {
             return response([
-                'message'=>'Dados inválidos',
+                'message'=>$exception->getMessage(),//'Dados inválidos',
                 'errors'=>$exception->errors()
             ], 404);
         }

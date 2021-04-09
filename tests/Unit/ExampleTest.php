@@ -2,6 +2,7 @@
 
 namespace Tests\Unit;
 
+use App\Repositories\CustomersRepository;
 use PHPUnit\Framework\TestCase;
 
 class ExampleTest extends TestCase
@@ -11,8 +12,10 @@ class ExampleTest extends TestCase
      *
      * @return void
      */
-    public function testBasicTest()
+    public function test_query_bring_complete_name()
     {
-        $this->assertTrue(true);
+        $customer = (new CustomersRepository())
+            ->customerByNumberWithout(363, ['creditLimit']);
+        $this->assertEquals('Steve Patterson', $customer->responsibleEmployee);
     }
 }

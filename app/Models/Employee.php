@@ -10,5 +10,17 @@ class Employee extends Model
     use HasFactory;
     protected $table = 'employees';
 
-    protected $fillable = ['','','','',''];
+    protected $fillable = [
+        "employeeNumber",
+        "lastName",
+        "firstName",
+        "extension",
+        "email",
+        "officeCode",
+        "reportsTo",
+        "jobTitle",
+        "employeeNumber",
+        "reportsTo",
+        "officeCode"
+    ];
 }

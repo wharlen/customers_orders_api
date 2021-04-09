@@ -11,5 +11,13 @@ class OrderDetails extends Model
 
     protected $table = 'orderdetails';
 
-    protected $fillable = ['','','','',''];
+    protected $fillable = [
+        "orderNumber",
+        "productCode",
+        "quantityOrdered",
+        "priceEach",
+        "orderLineNumber",
+        "orderNumber",
+        "productCode"
+    ];
 }

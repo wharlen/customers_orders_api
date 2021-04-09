@@ -3,62 +3,37 @@
 namespace App\Http\Controllers;
 
 use App\Models\Order;
+use App\Repositories\OrdersRepository;
 use Illuminate\Http\Request;
 
 class OrderController extends Controller
 {
+
+    /**
+     * @var OrdersRepository
+     */
+    private $orderRepository;
+
+    public function __construct(OrdersRepository $orderRepository)
+    {
+        $this->orderRepository = $orderRepository;
+    }
+
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        //
-    }
+        $this->validate($request, ['customer_number'=>'exists:customers,customerNumber']);
+        try{
+            if($request->has('customer_number'))
+                return response($this->orderRepository->getOrdersByUserWithDetails($request->customer_number));
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Order  $orderController
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Order $orderController)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Order  $orderController
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, Order $orderController)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Order  $orderController
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Order $orderController)
-    {
-        //
+            return response($this->orderRepository->all());
+        }catch(\Exception $e){
+            return response(['message'=>$e->getMessage()]);
+        }
     }
 }
