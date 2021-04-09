@@ -1,41 +1,27 @@
-<p align="center"><div style="width:100%;min-height:217px;padding:20px 0;padding-bottom:60px;color:#000">
-
-	<span>
+<p align="center">
+<div style="width:100%;min-height:217px;padding:20px 0;padding-bottom:60px;color:#000">
+<span>
 		<span style="display:inline-block;padding-right:18px;margin-right:20px;margin-bottom:30px;vertical-align:top;border-right:1px solid #fbb03b">
-
-			
-			<img src="https://i.ibb.co/vjqtqgP/PERFIL.png" alt="Foto de perfil de Wharlen Santana">
-			<br>
+<img src="https://i.ibb.co/vjqtqgP/PERFIL.png" alt="Foto de perfil de Wharlen Santana"><br>
 		</span>
+<span style="display:inline-block;max-width:200px;margin-right:0;font-family:Calibri,Lucida Grande,Arial,sans-serif;font-size:13px;line-height:1.5">
 
-		<span style="display:inline-block;max-width:200px;margin-right:0;font-family:Calibri,Lucida Grande,Arial,sans-serif;font-size:13px;line-height:1.5">
+<h2 style="font-size:32px;margin:0;line-height:1;font-weight:400">Wharlen <b>Santana</b></h2>
 
-			<h2 style="font-size:32px;margin:0;line-height:1;font-weight:400">Wharlen <b>Santana</b></h2>
-
-			<span style="color:#888;font-size:15px">Desenvolvedor Web</span><br>
-			<span style="color:#888;font-size:15px">Músico Pianista</span>
+<span style="color:#888;font-size:15px">Desenvolvedor Web</span><br>
+<span style="color:#888;font-size:15px">Músico Pianista</span>
 			<br>
 			<a href="tel:+5531996441743" style="color:#000;text-decoration:none" target="_blank">+55&nbsp;(31)&nbsp;99644-1743&nbsp;</a>
 			<br><br>
 		</span>
-
-	</span>
-
-	<span style="display:inline-block;vertical-align:bottom;padding-right:60px;vertical-align:top">
-
-		
-
-		<a href="https://www.linkedin.com/in/wharlen-pimentel-santana-23a418a4/" title="LinkedIn" style="display:inline-block;border:1px solid #ddd;width:30px;height:30px;line-height:30px;text-align:center;margin-right:7px;margin-top:4px" target="_blank">
-			<img src="https://i.ibb.co/tqqvy3S/icon-linkedin.png" alt="Behance" style="vertical-align:middle" width="30px"></a>
-
-		<a href="https://github.com/wharlen" title="LinkedIn" style="display:inline-block;border:1px solid #ddd;width:30px;height:30px;line-height:30px;text-align:center;margin-right:7px;margin-top:4px" target="_blank">
+</span>
+<span style="display:inline-block;vertical-align:bottom;padding-right:60px;vertical-align:top">
+<a href="https://www.linkedin.com/in/wharlen-pimentel-santana-23a418a4/" title="LinkedIn" style="display:inline-block;border:1px solid #ddd;width:30px;height:30px;line-height:30px;text-align:center;margin-right:7px;margin-top:4px" target="_blank">
+		<img src="https://i.ibb.co/tqqvy3S/icon-linkedin.png" alt="Behance" style="vertical-align:middle" width="30px"></a>
+<a href="https://github.com/wharlen" title="LinkedIn" style="display:inline-block;border:1px solid #ddd;width:30px;height:30px;line-height:30px;text-align:center;margin-right:7px;margin-top:4px" target="_blank">
 			<img src="https://i.ibb.co/YQL2HSQ/icon-github.png" alt="LinkedIn" style="vertical-align:middle" width="30px"></a>
-
-
-	</span>
-
-	<span style="clear:both"></span>
-
+</span>
+<span style="clear:both"></span>
 </div></p>
 
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
